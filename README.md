@@ -42,11 +42,11 @@ While running in simulator make sure you set your location for the device.
 ## Features
 
 * User can get  weather of the cities which are available with openweather API. 
-* Animation added to weather 
-* Awesome feature 3
+* Animation added to weather image
 
 To-do list:
 * We can add city list json to cehck if that city is available in thier list, it can be done in future
+* More test case can be written
 
 
 ## Status
