@@ -15,8 +15,9 @@
 Add more general information about project. What the purpose of the project is? Motivation?
 
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
-![Example screenplay](/.img.Movie1.MP4)
+![Example screenshot](/.img.Screenshot1.PNG)
+![Example screenshot](/.img.Screenshot1.PNG)
+![Example screenshot](/.img.Screenshot1.PNG)
 
 ## Technologies
 * Tech 1 - version 1.0
