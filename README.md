@@ -1,18 +1,24 @@
 # Project Name
-> Here goes your awesome project description!
+>Weather App
 
 ## Table of contents
 * [General info](#general-info)
 * [Screenshots](#screenshots)
 * [Technologies](#technologies)
-* [Setup](#setup)
 * [Features](#features)
 * [Status](#status)
 * [Inspiration](#inspiration)
 * [Contact](#contact)
 
 ## General info
-Add more general information about project. What the purpose of the project is? Motivation?
+
+
+1. The app can accept multiple city names from the user
+2. .Based on the city names entered, the app will show the weatherforecast for next 5 days for each city
+3. App will find current location and update the screen and user can get current data by click on marker.
+4. It displays the weather forecast for the current city for next 5 days.
+5. User can select a day from the list to see particular day's forecast.
+
 
 ## Screenshots
 ![Example screenshot](/.img.Screenshot_1.PNG)
@@ -20,32 +26,31 @@ Add more general information about project. What the purpose of the project is? 
 ![Example screenshot](/.img.Screenshot_3.PNG)
 
 ## Technologies
-* Tech 1 - version 1.0
-* Tech 2 - version 2.0
-* Tech 3 - version 3.0
+* Swift - version 1.0
+* MVVM
+*Autolayout
+
 
 ## Setup
-Describe how to install / setup your local environement / add link to demo version.
+While running in simulator make sure you set your location for the device.
 
-## Code Examples
-Show examples of usage:
-`put-your-code-here`
 
 ## Features
-List of features ready and TODOs for future development
-* Awesome feature 1
+
+* User can get  weather of the cities which are available with openweather API. 
 * Awesome feature 2
 * Awesome feature 3
 
 To-do list:
-* Wow improvement to be done 1
-* Wow improvement to be done 2
+* We can add city list json to cehck if that city is available in thier list, it can be done in future
+
 
 ## Status
-Project is: _in progress_, _finished_, _no longer continue_ and why?
+Completed
 
 ## Inspiration
-Add here credits. Project inspired by..., based on...
+inspired by Apple map.
+
 
 ## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
+Created by Apoorva Reed. [@apoorvareed](apoorva.reed@gmail.com) - feel free to contact me!

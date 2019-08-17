@@ -10,7 +10,7 @@ import UIKit
 
 class WeatherTableViewCell: UITableViewCell {
 
-    
+    // label to show day
     var dayLabel: UILabel = {
         var label = UILabel()
         label.textAlignment = .left
@@ -19,6 +19,7 @@ class WeatherTableViewCell: UITableViewCell {
         return label
     }()
     
+    //label to show highest temp for the day
     var highLabel: UILabel = {
         var label = UILabel()
         label.textAlignment = .center
@@ -27,6 +28,7 @@ class WeatherTableViewCell: UITableViewCell {
         return label
     }()
     
+    //label to show lowest temp for the day
     var lowLabel: UILabel = {
         var label = UILabel()
         label.textAlignment = .center
@@ -52,20 +54,18 @@ class WeatherTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-                dayLabel.leftAnchor.constraint(equalTo:  self.leftAnchor, constant: 1).isActive = true
-                dayLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
-                dayLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        
-        
-                lowLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20).isActive = true
-//                lowLabel.leftAnchor.constraint(equalTo: self.centerXAnchor, constant: 50).isActive = true
-                //lowLabel.w
-                lowLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+            dayLabel.leftAnchor.constraint(equalTo:  self.leftAnchor, constant: 1).isActive = true
+            dayLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
+            dayLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+    
+    
+            lowLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20).isActive = true
+            lowLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
 
 
-        highLabel.leftAnchor.constraint(equalTo: lowLabel.leftAnchor, constant: -80).isActive = true
-        highLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-                //highLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+            highLabel.leftAnchor.constraint(equalTo: lowLabel.leftAnchor, constant: -80).isActive = true
+            highLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+
         
     }
     

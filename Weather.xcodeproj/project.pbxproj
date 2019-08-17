@@ -131,13 +131,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		D51A13E2230477D900B59DEA /* Extras */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extras;
-			sourceTree = "<group>";
-		};
 		D51A13E52304A16500B59DEA /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,7 +172,6 @@
 			children = (
 				D51A1403230792C000B59DEA /* Utility */,
 				D51A13E52304A16500B59DEA /* Service */,
-				D51A13E2230477D900B59DEA /* Extras */,
 				D51A13DD2304559700B59DEA /* Model */,
 				D51A13DC2304558600B59DEA /* View Model */,
 				D51A13DB2304552300B59DEA /* View */,

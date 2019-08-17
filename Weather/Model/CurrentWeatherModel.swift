@@ -6,6 +6,8 @@
 //  Copyright © 2019 Apoorva Reed(Personal). All rights reserved.
 //
 
+//view model for current weather
+
 import Foundation
 
 

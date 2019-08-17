@@ -19,7 +19,7 @@ class WeatherCollectionViewCell: UICollectionViewCell {
         setUpView()
     }
     
-    //label 
+    //label for time of the weather
     var timeLabel: UILabel = {
         var label = UILabel()
         label.textAlignment = .center
@@ -30,7 +30,7 @@ class WeatherCollectionViewCell: UICollectionViewCell {
     }()
     
     
-    
+    // to show image for the weather
     var weatherImageView: UIImageView = {
         var imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -44,6 +44,7 @@ class WeatherCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
+    // to show temperature at that hour
     var temperatureLabel: UILabel = {
         var label = UILabel()
         label.textAlignment = .center

@@ -13,7 +13,7 @@ struct dailyWeatherModels{
 
 class DailyForecastViewModel {
     let forecastData: ForecastModel
-//    let dailyWeather: dailyWeatherModels
+
     private(set) var dailyWeather: [[todaysData]] = []
     private(set) var timeZone: Int = 0
     private(set) var lowTemp: Double = 80000.0
@@ -21,7 +21,6 @@ class DailyForecastViewModel {
     
     init(forecastData: ForecastModel) {
         self.forecastData = forecastData
-        //self.dailyWeather = dailyWeather
         updateProperties()
     }
     
@@ -31,7 +30,6 @@ class DailyForecastViewModel {
         timeZone = setTimeZone(forecastData: forecastData)
         dailyWeather = setDailyWeather(forecastData: forecastData)
         
-        //weatherData = setWeatherData(forecastData: forecastData)
     }
     
     func setTimeZone(forecastData: ForecastModel) -> Int{
@@ -42,8 +40,7 @@ class DailyForecastViewModel {
     func getDate(date: Double, timeZone: Int) -> Date{
         let rawDate = Date(timeIntervalSince1970: date)
         let dateFormatter = DateFormatter()
-//        dateFormatter.dateStyle = .long
-//        dateFormatter.timeStyle = .long
+
         
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         dateFormatter.timeZone = TimeZone(secondsFromGMT: timeZone)
@@ -61,7 +58,7 @@ class DailyForecastViewModel {
     }
     
     func getSpecificDate(rawDate: Date) -> Date{
-        //let rawDate = Date(timeIntervalSince1970: date)
+        
     
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
@@ -72,7 +69,7 @@ class DailyForecastViewModel {
     }
     
     func getSpecificDay(rawDate: Date) -> String{
-        //let rawDate = Date(timeIntervalSince1970: date)
+        
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
@@ -90,18 +87,18 @@ class DailyForecastViewModel {
     
     private func setDailyWeather(forecastData: ForecastModel) -> [[todaysData]]{
         var todayData: [[todaysData]] = []
-       // var weatherModel: CurrentWeatherModel
+       
         var dailyModel: [todaysData] = []
-       // var weatherVM: [WeaterViewModel] = []
+       
         let currDt = Double(forecastData.list[0].dt)
         var currentDate: Date = getDate(date: currDt, timeZone: forecastData.city.timezone)
         
         var nextDate: Date
         for (idx, forecast) in forecastData.list.enumerated(){
-            //let weather = forecast.weather
+            
             let dt = Double(forecast.dt)
             let main = forecast.main
-            //let name = setCityName(forecastData: forecastData)
+            
             let timeZone = forecastData.city.timezone
             
             nextDate = getDate(date:dt,timeZone: timeZone)
@@ -132,10 +129,6 @@ class DailyForecastViewModel {
                 todayData.append(dailyModel)
             }
             
-//            dailyModel.append(todaysData(time: <#T##String#>, temp: <#T##Double#>, weather: <#T##String#>))
-//            weatherModel = CurrentWeatherModel(weather: weather, main: main, dt: dt, name: name, timezone: timeZone)
-//            let weatherViewModelData = WeaterViewModel(currentWeather: weatherModel)
-//            weatherVM.append(weatherViewModelData)
             
             
         }

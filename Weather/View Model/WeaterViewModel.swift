@@ -7,10 +7,7 @@
 //
 
 import Foundation
-//import Alamofire
 
-
-//locationAuthCheck
 
 class WeaterViewModel: locationUpdateDelegate{
     func updateCityName(city: String) {
@@ -46,11 +43,7 @@ class WeaterViewModel: locationUpdateDelegate{
         
     }
     
-//    func inititateDelegate(){
-//        let classVC = ViewController()
-//        classVC.delegate = self
-//    }
-    
+
     private func updateProperties() {
         
         timeZone = setTimeZone(currentWeather: currentWeather)
@@ -97,7 +90,7 @@ class WeaterViewModel: locationUpdateDelegate{
         
         let date = Double(currentWeather.dt)
         return date
-        //return getdate
+        
         
     }
     

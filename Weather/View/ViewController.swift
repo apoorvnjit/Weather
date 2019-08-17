@@ -64,7 +64,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
     var tempDegree = "°F" // to check and change data to Farhenhier oe celcius
     
     
-    // initializing ui elements
+    // initializing UI elements
     
     // Location name text where user can input city name
     let cityText: UITextField = {
@@ -99,7 +99,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
         return button
     }()
     
-    //  button for getting current locatio update
+    //  button for getting current location update
     let updateLocationdButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -246,26 +246,26 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
      super.viewDidLoad()
         
         
+        //adding ui elements to screen
         setScreen()
         
-        
-        
+        //initialise delegates for location update
         weatherViewModel?.setDelegates()
         
-        
+        //to check permission for user location
         _ = locationAuthCheck()
+        
+        //setting up some delegeates
         callDelegates()
         
+        // setting up location related features
         setUpLocation()
+        
+        // gettin location and displaying the data
         _ = getCurrentData()
-        setupBacground()
-        setupCollection()
+        
+        
         setupScreenConstraints()
-        
-        
-        
-       
-        //updateLabels()
         
     }
     
@@ -403,13 +403,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
     }
     
     
-    private func setupCollection(){
-        
-        weatherCollectionView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 60).isActive = true
-        weatherCollectionView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        weatherCollectionView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        weatherCollectionView.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
-    }
     
     
     /*
@@ -425,14 +418,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
         let weatherLabelheight = screenHeightSize/30
         
         
+        weatherCollectionView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 60).isActive = true
+        weatherCollectionView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        weatherCollectionView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        weatherCollectionView.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
+        
+        backgroundImageView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        backgroundImageView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
         
         cityText.leftAnchor.constraint(equalTo: view.leftAnchor, constant: _padding*8).isActive = true
         cityText.topAnchor.constraint(equalTo: view.topAnchor, constant: 40).isActive = true
         cityText.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
         
-    
-        //cityText.widthAnchor.constraint(equalToConstant: screenWidthSize - 70).isActive = true
 
         addButton.leftAnchor.constraint(equalTo: cityText.rightAnchor, constant: _padding).isActive = true
         addButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -_padding).isActive = true
@@ -443,7 +444,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
         
         
         updateLocationdButton.leftAnchor.constraint(equalTo: cityText.rightAnchor, constant: _padding).isActive = true
-        //addButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -_padding).isActive = true
         updateLocationdButton.topAnchor.constraint(equalTo: addButton.bottomAnchor, constant: _padding).isActive = true
         updateLocationdButton.widthAnchor.constraint(equalToConstant: labelWidth/2).isActive = true
         updateLocationdButton.bottomAnchor.constraint(equalTo: locationLabel.bottomAnchor).isActive = true
@@ -487,7 +487,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
         dateLabel.heightAnchor.constraint(equalToConstant: weatherLabelheight).isActive = true
         dateLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
-        temperatureLabel.bottomAnchor.constraint(equalTo: dateLabel.topAnchor, constant: -_padding*2).isActive = true
+        temperatureLabel.bottomAnchor.constraint(equalTo: dateLabel.topAnchor, constant: -_padding).isActive = true
         temperatureLabel.widthAnchor.constraint(equalToConstant: labelWidth).isActive = true
         temperatureLabel.heightAnchor.constraint(equalToConstant: labelWidth/2).isActive = true
         temperatureLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -508,10 +508,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
     
     
     private func setupBacground(){
-        backgroundImageView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        backgroundImageView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
         
     }
@@ -598,23 +594,18 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: _cellId, for: indexPath) as! WeatherTableViewCell
-//        let currentdata = data[indexPath.row]
         let currentdataCount = forecast?.dailyWeather[indexPath.row].count ?? 1
         let currentdata = forecast?.dailyWeather[indexPath.row][currentdataCount-1]
         cell.dayLabel.text = currentdata?.day
         if(tempDegree == _tempDegreeC){
-//            let lowData = currentdata?.lowTempC ?? "0"
             cell.lowLabel.text = currentdata?.lowTempC
-//            let highData = currentdata?.highTempC ?? "0"
             cell.highLabel.text = currentdata?.highTempC
         }else{
-//            let lowData = currentdata?.lowTempF ?? "0"
             cell.lowLabel.text = currentdata?.lowTempF
-//            let highData = currentdata?.highTempF ?? "0"
             cell.highLabel.text = currentdata?.lowTempF
         }
         
-        //cell.layer.backgroundColor = UIColor.clear.cgColor
+
         
         return cell
     }
@@ -653,8 +644,7 @@ extension ViewController{
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
         textField.resignFirstResponder()
-        //or
-        //self.view.endEditing(true)
+        
         return true
     }
     
@@ -679,7 +669,7 @@ extension ViewController{
     }
     
     @objc func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        
         view.endEditing(true)
     }
     

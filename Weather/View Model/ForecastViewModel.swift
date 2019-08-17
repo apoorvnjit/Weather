@@ -35,11 +35,12 @@ class ForecaseViewModel {
             let dt = forecast.dt
             let main = forecast.main
             let name = setCityName(forecastData: forecastData)
-           // let dateFormatter = DateFormatter()
+           
             let timeZone = forecastData.city.timezone
             let sunset =  065655
             let sunrise =  065655
-           // weatherModel = CurrentWeatherModel(weather: <#T##[Weather]#>, main: <#T##Main#>, dt: <#T##Int#>, sys: <#T##Sys#>, name: <#T##String#>, timezone: <#T##Int#>)
+           
+            // gatehering data for forecast
             weatherModel = CurrentWeatherModel(weather: weather, main: main, dt: dt, sys: Sys(sunrise: sunrise, sunset: sunset), name: name, timezone: timeZone)
             let weatherViewModelData = WeaterViewModel(currentWeather: weatherModel)
             weatherVM.append(weatherViewModelData)
