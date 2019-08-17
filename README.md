@@ -21,9 +21,9 @@
 
 
 ## Screenshots
-![Example screenshot](/.img/Screenshot_1.PNG)
+![Example screenshot](/.img/Screenshot_1.png)
 ![Example screenshot](/.img/screenshot.png)
-![Example screenshot](/.img/Screenshot_3.PNG)
+![Example screenshot](/.img/Screenshot_3.png)
 
 ## Technologies
 * Swift - version 1.0
