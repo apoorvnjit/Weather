@@ -21,10 +21,10 @@
 
 
 ## Screenshots
-![Example screenshot](img/Screenshot_32.png)
+![Example screenshot](img/Screenshot_1.png)
 
 
-![Example screenshot](img/Screenshot_32.png)
+![Example screenshot](img/Screenshot_2.png)
 
 
 ![Example screenshot](img/Screenshot_3.png)
