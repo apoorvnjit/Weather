@@ -17,7 +17,7 @@
 3. App will find current location and update the screen and user can get current data by click on marker.
 4. It displays the weather forecast for the current city for next 5 days.
 5. User can select a day from the list to see particular day's forecast.
-6. Animation added to weather image, can be seen on reak device as in simulator you cannot rotate it in 3D.(Video added in img folder)
+6. Animation added to weather image, can be seen on real device as in simulator you cannot rotate it in 3D.(Video added in img folder)
 
 
 ## Screenshots
