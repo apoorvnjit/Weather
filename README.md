@@ -16,7 +16,7 @@ Add more general information about project. What the purpose of the project is? 
 
 ## Screenshots
 ![Example screenshot](./img/screenshot.png)
-(https://media.giphy.com/media/QB9cXKH9bGQ1CTBXPG/giphy.gif)
+![Example screenplay](/.img.Movie1.MP4)
 
 ## Technologies
 * Tech 1 - version 1.0
