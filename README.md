@@ -15,9 +15,9 @@
 Add more general information about project. What the purpose of the project is? Motivation?
 
 ## Screenshots
-![Example screenshot](/.img.Screenshot1.PNG)
-![Example screenshot](/.img.Screenshot1.PNG)
-![Example screenshot](/.img.Screenshot1.PNG)
+![Example screenshot](/.img.Screenshot_1.PNG)
+![Example screenshot](/.img.Screenshot_2.PNG)
+![Example screenshot](/.img.Screenshot_3.PNG)
 
 ## Technologies
 * Tech 1 - version 1.0
